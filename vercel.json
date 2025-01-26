@@ -1,12 +1,15 @@
 {
     "routes": [
         { "handle": "filesystem" },
-        { "src": "/github-readme-streak-stats/demo/?", "dest": "/api/demo/index.php" },
-        { "src": "/github-readme-streak-stats/demo/(.+)", "dest": "/api/demo/vercel-static.php" },
-        { "src": "/github-readme-streak-stats/", "dest": "/api/index.php" },
+        { "src": "/demo/?", "dest": "/api/demo/index.php" },
+        { "src": "/demo/(.+)", "dest": "/api/demo/vercel-static.php" },
+        { "src": "/", "dest": "/api/index.php" }
     ],
     "rewrites": [
-        { "source": "/github-readme-streak-stats(.*)", "destination": "/$1" }
+      {
+        "source": "/github-readme-streak-stats/:path*",
+        "destination": "/:path*"
+      }
     ],
     "functions": {
         "api/**/*": {
