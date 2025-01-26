@@ -1,19 +1,13 @@
 {
     "routes": [
         { "handle": "filesystem" },
-        { "src": "/demo/?", "dest": "/api/demo/index.php" },
-        { "src": "/demo/(.+)", "dest": "/api/demo/vercel-static.php" },
-        { "src": "/", "dest": "/api/index.php" }
+        { "src": "/github-readme-streak-stats/demo/?", "dest": "/api/demo/index.php" },
+        { "src": "/github-readme-streak-stats/demo/(.+)", "dest": "/api/demo/vercel-static.php" },
+        { "src": "/github-readme-streak-stats/", "dest": "/api/index.php" }
     ],
     "functions": {
         "api/**/*": {
             "runtime": "vercel-php@0.7.3"
         }
-    },
-    "rewrites": [
-      {
-        "source": "/streak-stats/(.*)",
-        "destination": "/$1"
-      }
-    ]
+    }
 }
