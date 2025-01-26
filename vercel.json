@@ -9,5 +9,11 @@
         "api/**/*": {
             "runtime": "vercel-php@0.7.3"
         }
-    }
+    },
+    "rewrites": [
+      {
+        "source": "/streak-stats/(.*)",
+        "destination": "/$1"
+      }
+    ]
 }
